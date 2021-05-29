@@ -1,7 +1,7 @@
 let info;
 let clickCount = 0;
 
-class Example extends Phaser.Scene
+class marksMap extends Phaser.Scene
 {
     constructor ()
     {
@@ -10,16 +10,16 @@ class Example extends Phaser.Scene
 
     preload ()
     {
-        this.load.image('bg', 'assets/skies/sky4.png');
-        this.load.image('crate', 'assets/sprites/crate.png');
+      this.load.path = "./src/assets/marks/";
+      this.load.image("mark", "shield.png");
     }
 
     create ()
     {
-        this.add.image(400, 300, 'bg');
-        var box = this.add.image(200, 150, 'crate');
-        box.setInteractive();
-        box.on('clicked', this.clickHandler, this);
+
+        var pointMark = this.add.image(200, 150, 'mark');
+        pointMark.setInteractive();
+        pointMark.on('clicked', this.clickHandler, this);
         clickCount++;
         this.input.on('gameobjectup', function (pointer, gameObject)
         {
@@ -34,7 +34,7 @@ class Example extends Phaser.Scene
         info.setText('Clicks: ' + clickCount);
     }
 
-    clickHandler (box)
+    clickHandler (pointMark)
     {
         clickCount++;
     }
@@ -43,9 +43,10 @@ class Example extends Phaser.Scene
 const config = {
     type: Phaser.AUTO,
     parent: 'phaser-example',
-    width: 800,
-    height: 600,
-    scene: [ Example ]
+    width: window.innerWidth,
+    height: window.innerHeight,
+    backgroundColor: '#848482',
+    scene: [ marksMap ]
 };
 
 const game = new Phaser.Game(config);
