@@ -18,6 +18,7 @@ class marksMap extends Phaser.Scene
     {
 
         var pointMark = this.add.image(200, 150, 'mark');
+        pointMark.setScale(0.5);
         pointMark.setInteractive();
         pointMark.on('clicked', this.clickHandler, this);
         clickCount++;
