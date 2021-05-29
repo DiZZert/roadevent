@@ -1,6 +1,6 @@
 let info;
 
-class Example extends Phaser.Scene
+class gameText extends Phaser.Scene
 {
     constructor ()
     {
