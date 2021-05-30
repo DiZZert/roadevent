@@ -20,7 +20,7 @@ class markPlugin extends Phaser.Plugins.BasePlugin {
     constructor (pluginManager)
     {
         super(pluginManager);
-        pluginManager.registerGameObject('mark', this.createClown);
+        pluginManager.registerGameObject('mark', this.createMark);
     }
 
     createMark (x, y)
