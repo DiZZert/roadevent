@@ -1,22 +1,6 @@
 let info;
 let clickCount = 0;
 
-const config = {
-    type: Phaser.AUTO,
-    parent: 'phaser-example',
-    width: window.innerWidth,
-    height: window.innerHeight,
-    backgroundColor: '#848482',
-    plugins: {
-        global: [
-            { key: 'markPlugin', plugin: markPlugin, start: true }
-        ]
-    },
-    scene: [ marksMap ]
-};
-
-const game = new Phaser.Game(config);
-
 class markGameObject extends Phaser.GameObjects.Image {
     constructor (scene, x, y)
     {
@@ -44,6 +28,22 @@ class markPlugin extends Phaser.Plugins.BasePlugin {
         return this.displayList.add(new markGameObject(this.scene, x, y));
     }
 }
+
+const config = {
+    type: Phaser.AUTO,
+    parent: 'phaser-example',
+    width: window.innerWidth,
+    height: window.innerHeight,
+    backgroundColor: '#848482',
+    plugins: {
+        global: [
+            { key: 'markPlugin', plugin: markPlugin, start: true }
+        ]
+    },
+    scene: [ marksMap ]
+};
+
+const game = new Phaser.Game(config);
 
 class marksMap extends Phaser.Scene
 {
