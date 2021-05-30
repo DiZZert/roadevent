@@ -68,6 +68,11 @@ const config = {
     width: window.innerWidth,
     height: window.innerHeight,
     backgroundColor: '#848482',
+    plugins: {
+        global: [
+            { key: 'markPlugin', plugin: markPlugin, start: true }
+        ]
+    },
     scene: [ marksMap ]
 };
 
