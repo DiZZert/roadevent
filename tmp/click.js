@@ -6,13 +6,13 @@ class markGameObject extends Phaser.GameObjects.Image {
     {
         super(scene, x, y, 'mark');
         this.setScale(0.1);
-        this.setInteractive();
-        this.on('clicked', this.clickHandler, this);
-        clickCount++;
-        this.input.on('gameobjectup', function (pointer, gameObject)
-        {
-            gameObject.emit('clicked', gameObject);
-        }, this);
+        // this.setInteractive();
+        // this.on('clicked', this.clickHandler, this);
+        // clickCount++;
+        // this.input.on('gameobjectup', function (pointer, gameObject)
+        // {
+        //     gameObject.emit('clicked', gameObject);
+        // }, this);
     }
 }
 
@@ -77,32 +77,3 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
-
-
-// function mapMark(markType, markColor) {
-//   if (markColor != null) {
-//     switch (markType) {
-//       case markWhite:
-//         //return white mark
-//         break;
-//       case markGreen:
-//         //return green mark
-//         break;
-//       case markRed:
-//         //return red mark
-//         break;
-//       default:
-//         return null;
-//     }
-//   } else {
-//     switch (markType) {
-//       case markTreasure:
-//         //return treasure mark
-//         break;
-//       case markPVP:
-//         //return pvp mark
-//         break;
-//       default:
-//         return null;
-//   }
-// }
