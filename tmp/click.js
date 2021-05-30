@@ -72,7 +72,10 @@ const config = {
             { key: 'markPlugin', plugin: markPlugin, start: true }
         ]
     },
-    scene: [ marksMap ]
+    scene: {
+       preload: preload,
+       create: create
+   }
 };
 
 const game = new Phaser.Game(config);
