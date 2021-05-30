@@ -46,7 +46,6 @@ class marksMap extends Phaser.Scene
     {
 
         this.add.mark(200, 150);
-        this.add.mark(200, 300);
 
         info = this.add.text(10, 10, '', { font: '48px Arial', fill: '#000000' });
     }
