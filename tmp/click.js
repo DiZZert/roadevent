@@ -1,6 +1,34 @@
 let info;
 let clickCount = 0;
 
+class markGameObject extends Phaser.GameObjects.Image {
+    constructor (scene, x, y)
+    {
+        super(scene, x, y, 'mark');
+        this.setScale(0.1);
+        this.setInteractive();
+        this.on('clicked', this.clickHandler, this);
+        clickCount++;
+        this.input.on('gameobjectup', function (pointer, gameObject)
+        {
+            gameObject.emit('clicked', gameObject);
+        }, this);
+    }
+}
+
+class markPlugin extends Phaser.Plugins.BasePlugin {
+    constructor (pluginManager)
+    {
+        super(pluginManager);
+        pluginManager.registerGameObject('mark', this.createClown);
+    }
+
+    createMark (x, y)
+    {
+        return this.displayList.add(new markGameObject(this.scene, x, y));
+    }
+}
+
 class marksMap extends Phaser.Scene
 {
     constructor ()
@@ -17,15 +45,7 @@ class marksMap extends Phaser.Scene
     create ()
     {
 
-        var pointMark = this.add.image(200, 150, 'mark');
-        pointMark.setScale(0.1);
-        pointMark.setInteractive();
-        pointMark.on('clicked', this.clickHandler, this);
-        clickCount++;
-        this.input.on('gameobjectup', function (pointer, gameObject)
-        {
-            gameObject.emit('clicked', gameObject);
-        }, this);
+        this.add.mark(200, 150);
 
         info = this.add.text(10, 10, '', { font: '48px Arial', fill: '#000000' });
     }
