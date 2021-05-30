@@ -6,13 +6,13 @@ class markGameObject extends Phaser.GameObjects.Image {
     {
         super(scene, x, y, 'mark');
         this.setScale(0.1);
-        this.setInteractive();
-        this.on('clicked', this.clickHandler, this);
-        clickCount++;
-        this.input.on('gameobjectup', function (pointer, gameObject)
-        {
-            gameObject.emit('clicked', gameObject);
-        }, this);
+        // this.setInteractive();
+        // this.on('clicked', this.clickHandler, this);
+        // clickCount++;
+        // this.input.on('gameobjectup', function (pointer, gameObject)
+        // {
+        //     gameObject.emit('clicked', gameObject);
+        // }, this);
     }
 }
 
