@@ -29,22 +29,6 @@ class markPlugin extends Phaser.Plugins.BasePlugin {
     }
 }
 
-const config = {
-    type: Phaser.AUTO,
-    parent: 'phaser-example',
-    width: window.innerWidth,
-    height: window.innerHeight,
-    backgroundColor: '#848482',
-    plugins: {
-        global: [
-            { key: 'markPlugin', plugin: markPlugin, start: true }
-        ]
-    },
-    scene: [ marksMap ]
-};
-
-const game = new Phaser.Game(config);
-
 class marksMap extends Phaser.Scene
 {
     constructor ()
@@ -76,3 +60,19 @@ class marksMap extends Phaser.Scene
         clickCount++;
     }
 }
+
+const config = {
+    type: Phaser.AUTO,
+    parent: 'phaser-example',
+    width: window.innerWidth,
+    height: window.innerHeight,
+    backgroundColor: '#848482',
+    plugins: {
+        global: [
+            { key: 'markPlugin', plugin: markPlugin, start: true }
+        ]
+    },
+    scene: [ marksMap ]
+};
+
+const game = new Phaser.Game(config);
