@@ -1,4 +1,7 @@
-const app = new PIXI.Application({ backgroundColor: 0x1099bb });
+const app = new PIXI.Application({
+  backgroundColor: 0x1099bb,
+  resolution: devicePixelRatio, 
+});
 document.body.appendChild(app.view);
 
 // Scale mode for all textures, will retain pixelation
@@ -7,7 +10,7 @@ PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 const sprite = PIXI.Sprite.from('./src/assets/marks/shield.png');
 
 // Set the initial position
-sprite.anchor.set(0.5);
+sprite.anchor.set(0.1);
 sprite.x = app.screen.width / 2;
 sprite.y = app.screen.height / 2;
 
