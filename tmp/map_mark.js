@@ -11,7 +11,7 @@ PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 const sprite = PIXI.Sprite.from('./src/assets/marks/shield.png');
 
 // Set the initial position
-sprite.anchor.set(0.1);
+sprite.anchor.set(0.04);
 sprite.x = app.screen.width / 2;
 sprite.y = app.screen.height / 2;
 
