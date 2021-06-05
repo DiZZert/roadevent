@@ -1,5 +1,5 @@
 const app = new PIXI.Application({
-  backgroundColor: 0x1099bb,
+  backgroundColor: #848482,
   autoResize: true,
   resolution: devicePixelRatio,
 });
