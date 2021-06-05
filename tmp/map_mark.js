@@ -14,8 +14,8 @@ const sprite = PIXI.Sprite.from('./src/assets/marks/shield.png');
 // sprite.anchor.set(0.04);
 sprite.width = 15;
 sprite.height = 15;
-sprite.x = app.screen.width / 2;
-sprite.y = app.screen.height / 2;
+sprite.x = window.innerWidth / 2;
+sprite.y = window.screen.innerHeight / 2;
 
 // Opt-in to interactivity
 sprite.interactive = true;
