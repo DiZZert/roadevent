@@ -1,6 +1,7 @@
 const app = new PIXI.Application({
   backgroundColor: 0x1099bb,
-  resolution: devicePixelRatio, 
+  autoResize: true,
+  resolution: devicePixelRatio,
 });
 document.body.appendChild(app.view);
 
@@ -33,3 +34,18 @@ function onClick() {
     sprite.scale.x *= 1.25;
     sprite.scale.y *= 1.25;
 }
+
+window.addEventListener('resize', resize);
+
+// Resize function window
+function resize() {
+	// Resize the renderer
+	app.renderer.resize(window.innerWidth, window.innerHeight);
+
+  // You can use the 'screen' property as the renderer visible
+  // area, this is more useful than view.width/height because
+  // it handles resolution
+  rect.position.set(app.screen.width, app.screen.height);
+}
+
+resize();
