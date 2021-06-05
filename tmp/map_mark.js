@@ -12,8 +12,8 @@ const sprite = PIXI.Sprite.from('./src/assets/marks/shield.png');
 
 // Set the initial position
 // sprite.anchor.set(0.04);
-sprite.width = 15;
-sprite.height = 15;
+sprite.width = 40;
+sprite.height = 40;
 sprite.x = window.innerWidth / 2;
 sprite.y = window.screen.innerHeight / 2;
 
