@@ -12,8 +12,7 @@ const sprite = PIXI.Sprite.from('./src/assets/marks/shield.png');
 
 // Set the initial position
 sprite.anchor.set(0.1);
-sprite.x = app.screen.width / 2;
-sprite.y = app.screen.height / 2;
+
 
 // Opt-in to interactivity
 sprite.interactive = true;
@@ -45,7 +44,9 @@ function resize() {
   // You can use the 'screen' property as the renderer visible
   // area, this is more useful than view.width/height because
   // it handles resolution
-  sprite.position.set(app.screen.width, app.screen.height);
+  // sprite.position.set(app.screen.width, app.screen.height);
+  sprite.x = app.screen.width / 2;
+  sprite.y = app.screen.height / 2;
 }
 
 resize();
