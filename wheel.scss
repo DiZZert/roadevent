@@ -1,6 +1,12 @@
 $animation-duration: 6s;
 $animation-reverse: false;
 
+.backgroundImg {
+  margin: 0 auto 0;
+  width: 80%;
+  align: center;
+}
+
 *, *:before, *:after { box-sizing: border-box; }
 
 .wheel {
