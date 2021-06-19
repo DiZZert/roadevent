@@ -4,7 +4,7 @@
 
 .wheel {
   perspective: 1000px;
-  /* border: 1px solid #333; */
+  border: 1px solid #333;
   margin: 50px;
 }
 .wheel .wheel__inner {
