@@ -21,8 +21,6 @@
 	z-index: 1;
 }
 .wheel .wheel__inner {
-  /* background-color: red; */
-  /* position: relative; */
   width: 200px;
   height: 350px;
   margin: 0 auto ;
