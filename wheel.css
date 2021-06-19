@@ -1,0 +1,47 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.wheel {
+  perspective: 1000px;
+  /* border: 1px solid #333; */
+  margin: 50px;
+}
+.wheel .wheel__inner {
+  /* background-color: red; */
+  position: relative;
+  width: 200px;
+  height: 350px;
+  margin: 0 auto ;
+  transform-style: preserve-3d;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: spin;
+  animation-duration: 6s;
+}
+.wheel .wheel__inner .wheel__segment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  background-color: #5a8d22;
+      color: #ffffff;
+}
+.wheel .wheel__inner .wheel__segment:nth-child(even) {
+  background-color: #972c2c;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotateX(360deg);
+  }
+  50% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
