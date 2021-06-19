@@ -2,14 +2,27 @@
   box-sizing: border-box;
 }
 
+.bc_image{
+	text-align: center;
+	position: relative;
+	z-index: 2;
+}
+
 .wheel {
+	position: relative;
+	text-align: center;
   perspective: 1000px;
   border: 1px solid #333;
-  margin: 50px;
+  margin: 0 auto;
+	width: 10%;
+	top: -69%;
+	height: 0%;
+	vertical-align: middle;
+	z-index: 1;
 }
 .wheel .wheel__inner {
-  background-color: red;
-  position: relative;
+  /* background-color: red; */
+  /* position: relative; */
   width: 200px;
   height: 350px;
   margin: 0 auto ;
