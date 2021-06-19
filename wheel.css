@@ -12,12 +12,11 @@
 	position: relative;
 	text-align: center;
   perspective: 1000px;
-  border: 1px solid #333;
+  /* border: 1px solid #333; */
   margin: 0 auto;
 	width: 10%;
-	top: -69%;
+	top: -66%;
 	height: 0%;
-	vertical-align: middle;
 	z-index: 1;
 }
 .wheel .wheel__inner {

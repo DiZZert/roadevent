@@ -1,7 +1,7 @@
 ( function( $ ) {
 
     const $wheel = $( '.wheel .wheel__inner' );
-    const items = 28;
+    const items = 12;
     const diameter = $wheel.height();
     const radius = diameter / 2;
     const angle = 360 / items;
