@@ -1,0 +1,48 @@
+$animation-duration: 6s;
+$animation-reverse: false;
+
+*, *:before, *:after { box-sizing: border-box; }
+
+.wheel {
+	perspective: 1000px;
+	border: 1px solid #333;
+	margin: 50px;
+
+	.wheel__inner {
+		//background-color: red;
+		position: relative;
+		width: 200px;
+		height: 350px;
+		margin: 0 auto;
+        transform-style: preserve-3d;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+		animation-name: spin;
+		animation-duration: $animation-duration;
+
+		@if $animation-reverse {
+			animation-direction: reverse;
+		}
+
+		.wheel__segment {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 40px;
+			position: absolute;
+			top: 50%;
+			background-color: #ccc;
+
+			&:nth-child(even) {
+				background-color: #ddd;
+			}
+		}
+	}
+}
+
+@-webkit-keyframes spin {
+	0%    { transform: rotateX(360deg); }
+	50%   { transform: rotateX(180deg); }
+	100%  { transform: rotateX(0deg); }
+}
