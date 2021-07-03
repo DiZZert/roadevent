@@ -41,6 +41,8 @@ div.wheel_button input {
 	z-index: 2;
 }
 .wheel__inner {
+  /* background-color: red; */
+  /* transform: rotateX(25.7143deg); */
   width: 250px;
   height: 450px;
   margin: 0 auto ;
@@ -67,17 +69,10 @@ div.wheel_button input {
 } */
 
 .wheelAnimation {
-  animation: 3s ease-in 1 reverse spinWheel;
+  animation: 9s ease-in 1 reverse spinWheel;
 }
 
 @-webkit-keyframes spinWheel {
-  0% {
-    transform: rotateX(0deg);
-  }
-   /* 50% {
-    transform: rotateX(180deg);
-  } */
-  100% {
-    transform: rotateX(360deg);
-  }
+  /* from {transform: rotateX(0deg);} */
+  to {transform: rotateX(3600deg);}
 }
