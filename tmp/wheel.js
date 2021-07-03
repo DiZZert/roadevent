@@ -23,7 +23,9 @@
 
           $( '<div>', {class: 'wheel__segment'} )
           .html( `<span> <img src="src/assets/wheel_icons/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
-          .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} );
+          .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
+          .hover(function() { $("#descriptionName").text(jsonObject[i].name), $("#descriptionText").text(jsonObject[i].description) });
+          // .hover(function() { console.log(jsonObject[i].name) });
       }
 
       $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)'); //центр вращения
