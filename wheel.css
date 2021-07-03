@@ -20,11 +20,18 @@
 .description{
   pointer-events: none;
 	text-align: center;
+  font-size: 20;
+  color: white;
 	position: absolute;
   left: 65%;
-  top: 30%;
+  top: 40%;
   width: 20%;
 	z-index: 3;
+}
+
+#descriptionName{
+  font-size: 28;
+  font-weight: bold;
 }
 
 div.wheel_button input {
