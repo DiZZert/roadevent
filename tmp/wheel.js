@@ -25,12 +25,10 @@
           .html( `<span> <img src="src/assets/wheel_icons/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
           .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
           .hover(function() { $("#descriptionName").text(jsonObject[i].name), $("#descriptionText").text(jsonObject[i].description) });
-          // .hover(function() { console.log(jsonObject[i].name) });
       }
 
       $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)'); //центр вращения
       $wheel.css('margin-top','-'+height+'px'); /* negative margin here to keep the element into the center */
-      // console.log('margin-top','-'+height+'px');
 
     $( ".wheel_button input[type=submit]" ).click(function( event ) {
 
