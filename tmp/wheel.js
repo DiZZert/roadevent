@@ -13,6 +13,9 @@
       return Math.random() * (361 - 0);
     }
 
+    var soundFile = document.createElement("audio");
+    soundFile.src = "src/audio/spinSound.mp3";
+
     var objArray =
     '[{"type": "buff","name": "Тест","pic": "test.png","description": "стример проходит тесты от сабов. (пару тестов) (одноразово) (можно использовать для перерыва)"},'+
     '{"type": "debuff","name": "Даунита","pic": "daynitakostum.png","description": "при выпадении стример надевает одну вещь из гардероба на голову. (на весь стрим) при повторном выпадении надевает вторую синергичную вещь"},'+
@@ -48,6 +51,8 @@
 
       $("#descriptionName").text('');
       $("#descriptionText").text('');
+
+      soundFile.play();
 
       $wheelSpinClass.addClass('wheelAnimation');
         var rotateDeg = getRandom();

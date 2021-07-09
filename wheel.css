@@ -12,13 +12,6 @@
 	z-index: 1;
 }
 
-.yakubgachi{
-  left: 10%;
-  top: 20%;
-  position: absolute;
-	z-index: 4;
-}
-
 .wheel_frame{
   pointer-events: none;
 	text-align: center;
