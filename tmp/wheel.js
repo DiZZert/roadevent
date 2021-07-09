@@ -14,7 +14,7 @@
     }
 
     var soundFile = document.createElement("audio");
-    soundFile.src = "src/audio/spinSound.mp3";
+    soundFile.src = "src/audio/poleGachi.mp3";
 
     var objArray =
     '[{"type": "buff","name": "Тест","pic": "test.png","description": "стример проходит тесты от сабов. (пару тестов) (одноразово) (можно использовать для перерыва)"},'+
