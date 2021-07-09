@@ -100,5 +100,5 @@ div.wheel_button input {
 
 @font-face {
     font-family: NewRocker; /* Имя шрифта */
-    src: url(src/fonts/Ubuntu-R.ttf); /* Путь к файлу со шрифтом */
+    src: url(src/fonts/NewRocker_Regular.ttf); /* Путь к файлу со шрифтом */
    }
