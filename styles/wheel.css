@@ -41,7 +41,7 @@
 }
 
 div.wheel_button input {
-    background:url(src/knopkaKrutit1.png) no-repeat;
+    background:url(../src/knopkaKrutit1.png) no-repeat;
     cursor:pointer;
     width: 180px;
     height: 70px;
@@ -76,7 +76,7 @@ div.wheel_button input {
   height: 40px;
   position: absolute;
   top: 50%;
-  background-image: url(src/assets/wheel_img/debuff1.png);
+  background-image: url(../src/assets/wheel_img/debuff1.png);
 }
 
 .wheelAnimation {
@@ -89,5 +89,5 @@ div.wheel_button input {
 
 @font-face {
     font-family: NewRocker;
-    src: url(src/fonts/NewRocker_Regular.ttf);
+    src: url(../src/fonts/NewRocker_Regular.ttf);
    }
