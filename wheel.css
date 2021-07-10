@@ -16,7 +16,6 @@
   pointer-events: none;
 	text-align: center;
 	position: absolute;
-  /* width: 680px; */
   left: 32%;
   top: 10%;
   z-index: 3;
@@ -58,24 +57,16 @@ div.wheel_button input {
 	position: absolute;
 	text-align: center;
   perspective: 1000px;
-  /* border: 1px solid #333; */
   margin: 0 auto;
   left: 43.7%;
   top: 28%;
-	/* height: 0%; */
 	z-index: 2;
 }
 .wheel__inner {
-  /* background-color: red; */
-  /* transform: rotateX(25.7143deg); */
   width: 250px;
   height: 450px;
   margin: 0 auto ;
   transform-style: preserve-3d;
-  /* animation-iteration-count: infinite; */
-  /* animation-timing-function: linear; */
-  /* animation-name: spin; */
-  /* animation-duration: 4s; */
 }
 .wheel .wheel__inner .wheel__segment {
   display: flex;
@@ -86,23 +77,17 @@ div.wheel_button input {
   position: absolute;
   top: 50%;
   background-image: url(src/assets/wheel_img/debuff1.png);
-  /* background-color: #903536; */
-      /* color: #ffffff; */
 }
-/* .wheel .wheel__inner .wheel__segment:nth-child(even) {
-  background-color: #972c2c;
-} */
 
 .wheelAnimation {
   animation: 9s ease-in 1 reverse spinWheel;
 }
 
 @-webkit-keyframes spinWheel {
-  /* from {transform: rotateX(0deg);} */
   to {transform: rotateX(3600deg);}
 }
 
 @font-face {
-    font-family: NewRocker; /* Имя шрифта */
-    src: url(src/fonts/NewRocker_Regular.ttf); /* Путь к файлу со шрифтом */
+    font-family: NewRocker;
+    src: url(src/fonts/NewRocker_Regular.ttf);
    }
