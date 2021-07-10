@@ -39,7 +39,7 @@
           var transform = `rotateX(${ angle * i }deg) translateZ(${ radius }px)`;
 
           $( '<div>', {class: 'wheel__segment'} )
-          .html( `<span> <img src="src/assets/wheel_icons/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
+          .html( `<span> <img src="src/assets/wheel_icons/effects/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
           .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
           .click(function() { $("#descriptionName").text(jsonObject[i].name), $("#descriptionText").text(jsonObject[i].description) });
       }
