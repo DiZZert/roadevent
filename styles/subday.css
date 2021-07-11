@@ -18,17 +18,3 @@
   width: 60%;
   /* height: 100px; */
 }
-
-.twheel_button{
-    position: fixed;
-    z-index: 3;
-    top: 10%;
-    background: transparent;
-    border: none !important;
-}
-
-.ewheel_button{
-    position: fixed;
-    z-index: 3;
-    /* top: 10%; */
-}
