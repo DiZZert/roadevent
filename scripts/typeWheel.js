@@ -7,7 +7,7 @@
     const radius = diameter / 2;
     const angle = 360 / items; //вычисление угла наклона
     const circumference = Math.PI * diameter; //длинна окружности
-    const height = (circumference / items) + 25; //высота блока
+    const height = (circumference / items) + 23; //высота блока
 
     function getRandom() {
       return Math.random() * (361 - 0);
@@ -24,11 +24,25 @@
     '{"type": "debuff","name": "СтимБиблиотека","pic": "steamrandom.png","description": "все сабы указывают %свою библиотеку стимовскую. Стример с помощью сайта https://servc.eu/rsg/ рандомно достает по одной игре с 8? библиотек сабов. Длительность каждой игры 40? минут."},'+
     '{"type": "debuff","name": "Интерактивные шарики","pic": "intershariki.png","description": "стример запускает stream marbles. Туда заходят онли желающие сабы(если можно так), устраивается 8? разных гонок на разных картах, каждый победитель на них выбирает любую желающую игру. Длительность каждой игры 40? минут.(первый вариант сабы указывают свои ники и после выбирают игру) (второй вариант сабы вместо ников указывают игру которую они хотят)"}]';
     ;
+
+    /*
+    <0 - Stream Avatars
+    от 0 до 1 - Интерактивные шарики
+    от 1 до 2 - СтимБиблиотека
+    от 2 до 3 - Годовое SGG колесо
+    от 3 до 4 - Обычный Сабдей
+    от 4 до 5 - МультиплеерСабДей
+    от 5 - Stream Avatars
+    */
+
+    // console.log(objArray);
+
     var jsonObject = jQuery.parseJSON(objArray);
 
       //создание окружности из заданного количесва элементов
       for ( let i = 0; i < items; i++ ) {
           var transform = `rotateX(${ angle * i }deg) translateZ(${ radius }px)`;
+          console.log(transform);
 
           $( '<div>', {class: 'wheel__segment'} )
           .html( `<span> <img src="src/assets/wheel_icons/subday_type/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
@@ -49,6 +63,10 @@
       $wheelSpinClass.addClass('wheelAnimation');
         var rotateDeg = getRandom();
         $wheelSpinClass.css('transform', 'rotateX(' + rotateDeg + 'deg)');
+
+        var currentPosition = Math.floor(rotateDeg-30)/angle;
+        console.log(currentPosition);
+
         setTimeout(function(){
           $wheelSpinClass.removeClass('wheelAnimation');
         }, 9000);
