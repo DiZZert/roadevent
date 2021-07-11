@@ -1,0 +1,34 @@
+.body{
+  overflow: hidden;
+}
+
+#wheelFrame{
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+
+.nav_panel{
+  position: fixed;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 2;
+  top: 87%;
+  left:21%;
+  width: 60%;
+  /* height: 100px; */
+}
+
+.twheel_button{
+    position: fixed;
+    z-index: 3;
+    top: 10%;
+    background: transparent;
+    border: none !important;
+}
+
+.ewheel_button{
+    position: fixed;
+    z-index: 3;
+    /* top: 10%; */
+}
