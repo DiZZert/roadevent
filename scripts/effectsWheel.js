@@ -20,7 +20,7 @@
     soundSorry.src = "src/audio/sorry.mp3";
 
     var likeThat = document.createElement("audio");
-    likeThat.src = "src/audio/like_that.mp3";
+    likeThat.src = "src/audio/what_you_see.mp3";
 
     var objArray =
     '[{"type": "buff","name": "Тест","pic": "test.png","description": "стример проходит тесты от сабов. (пару тестов) (одноразово) (можно использовать для перерыва)"},'+
