@@ -13,14 +13,20 @@
       return Math.random() * (361 - 0);
     }
 
-    var soundFile = document.createElement("audio");
-    soundFile.src = "src/audio/spinSound.mp3";
+    function playSound(name) {
+      var soundFile = document.createElement("audio");
+      soundFile.src = "src/audio/" + name + ".mp3";
+      soundFile.play();
+    }
 
-    var soundSorry = document.createElement("audio");
-    soundSorry.src = "src/audio/sorry.mp3";
-
-    var likeThat = document.createElement("audio");
-    likeThat.src = "src/audio/what_you_see.mp3";
+    // var soundFile = document.createElement("audio");
+    // soundFile.src = "src/audio/spinSound.mp3";
+    //
+    // var soundSorry = document.createElement("audio");
+    // soundSorry.src = "src/audio/sorry.mp3";
+    //
+    // var likeThat = document.createElement("audio");
+    // likeThat.src = "src/audio/what_you_see.mp3";
 
     var objArray =
     '[{"type": "buff","name": "Тест","pic": "test.png","description": "стример проходит тесты от сабов. (пару тестов) (одноразово) (можно использовать для перерыва)"},'+
@@ -61,7 +67,7 @@
       $("#descriptionName").text('');
       $("#descriptionText").text('');
 
-      soundFile.play();
+      playSound("spinSound");
 
       $wheelSpinClass.addClass('wheelAnimation');
         var rotateDeg = getRandom();
@@ -76,9 +82,9 @@
           $wheelSpinClass.removeClass('wheelAnimation');
 
           if(jsonObject[roundedPosition].type == "debuff") {
-              soundSorry.play();
+            playSound("sorry");
           } else {
-            likeThat.play();
+            playSound("what_you_see");
           }
 
            $("#descriptionName").text(jsonObject[roundedPosition].name);
