@@ -7,7 +7,7 @@
     const radius = diameter / 2;
     const angle = 360 / items; //вычисление угла наклона
     const circumference = Math.PI * diameter; //длинна окружности
-    const height = (circumference / items) + 23; //высота блока
+    const height = (circumference / items) + 22; //высота блока
 
     function getRandom() {
       return Math.random() * (361 - 0);
@@ -42,7 +42,7 @@
       //создание окружности из заданного количесва элементов
       for ( let i = 0; i < items; i++ ) {
           var transform = `rotateX(${ angle * i }deg) translateZ(${ radius }px)`;
-          console.log(transform);
+          // console.log(transform);
 
           $( '<div>', {class: 'wheel__segment'} )
           .html( `<span> <img src="src/assets/wheel_icons/subday_type/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
@@ -63,9 +63,6 @@
       $wheelSpinClass.addClass('wheelAnimation');
         var rotateDeg = getRandom();
         $wheelSpinClass.css('transform', 'rotateX(' + rotateDeg + 'deg)');
-
-        var currentPosition = Math.floor(rotateDeg-30)/angle;
-        console.log(currentPosition);
 
         setTimeout(function(){
           $wheelSpinClass.removeClass('wheelAnimation');

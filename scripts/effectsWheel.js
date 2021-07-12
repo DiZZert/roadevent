@@ -16,6 +16,9 @@
     var soundFile = document.createElement("audio");
     soundFile.src = "src/audio/spinSound.mp3";
 
+    var soundSorry = document.createElement("audio");
+    soundSorry.src = "src/audio/sorry.mp3";
+
     var objArray =
     '[{"type": "buff","name": "Тест","pic": "test.png","description": "стример проходит тесты от сабов. (пару тестов) (одноразово) (можно использовать для перерыва)"},'+
     '{"type": "debuff","name": "Даунита","pic": "daynitakostum.png","description": "при выпадении стример надевает одну вещь из гардероба на голову. (на весь стрим) при повторном выпадении надевает вторую синергичную вещь"},'+
@@ -59,10 +62,21 @@
 
       $wheelSpinClass.addClass('wheelAnimation');
         var rotateDeg = getRandom();
+
+        var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
+        var roundedPosition = Math.floor(currentPosition);
+
+        console.log("rotate deg: " + rotateDeg + " current pos: " + currentPosition + " " + jsonObject[roundedPosition].name);
+
         $wheelSpinClass.css('transform', 'rotateX(' + rotateDeg + 'deg)');
         setTimeout(function(){
           $wheelSpinClass.removeClass('wheelAnimation');
-        }, 9000);
+
+          if(jsonObject[roundedPosition].type == "debuff") {
+              soundSorry.play();
+          }
+
+        }, 10000);
      });
 
 } )( jQuery );
