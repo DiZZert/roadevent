@@ -19,6 +19,9 @@
     var soundSorry = document.createElement("audio");
     soundSorry.src = "src/audio/sorry.mp3";
 
+    var likeThat = document.createElement("audio");
+    likeThat.src = "src/audio/like_that.mp3";
+
     var objArray =
     '[{"type": "buff","name": "Тест","pic": "test.png","description": "стример проходит тесты от сабов. (пару тестов) (одноразово) (можно использовать для перерыва)"},'+
     '{"type": "debuff","name": "Даунита","pic": "daynitakostum.png","description": "при выпадении стример надевает одну вещь из гардероба на голову. (на весь стрим) при повторном выпадении надевает вторую синергичную вещь"},'+
@@ -74,6 +77,8 @@
 
           if(jsonObject[roundedPosition].type == "debuff") {
               soundSorry.play();
+          } else {
+            likeThat.play();
           }
 
         }, 10000);
