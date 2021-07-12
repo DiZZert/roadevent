@@ -49,8 +49,8 @@
 
           $( '<div>', {class: 'wheel__segment'} )
           .html( `<span> <img src="src/assets/wheel_icons/effects/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
-          .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
-          .click(function() { $("#descriptionName").text(jsonObject[i].name), $("#descriptionText").text(jsonObject[i].description) });
+          .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} );
+          // .click(function() { $("#descriptionName").text(jsonObject[i].name), $("#descriptionText").text(jsonObject[i].description) });
       }
 
       $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)'); //центр вращения
@@ -80,6 +80,9 @@
           } else {
             likeThat.play();
           }
+
+           $("#descriptionName").text(jsonObject[roundedPosition].name);
+           $("#descriptionText").text(jsonObject[roundedPosition].description);
 
         }, 9200);
      });
