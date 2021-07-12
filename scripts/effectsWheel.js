@@ -46,8 +46,16 @@
 
           $( '<div>', {class: 'wheel__segment'} )
           .html( `<span> <img src="src/assets/wheel_icons/effects/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
-          .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} );
+          .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
           // .click(function() { $("#descriptionName").text(jsonObject[i].name), $("#descriptionText").text(jsonObject[i].description) });
+          .mousedown(function(event) {
+            if(event.button == 1){
+              console.log(jsonObject[i].name);
+
+              $wheelSpinClass.toggle().toggle();
+            }
+          });
+
       }
 
       $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)'); //центр вращения
