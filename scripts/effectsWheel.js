@@ -50,15 +50,17 @@
           .html( `<span> <img src="src/assets/wheel_icons/effects/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
           .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
           // .click(function() { $("#descriptionName").text(jsonObject[i].name), $("#descriptionText").text(jsonObject[i].description) });
-          .mousedown(function(event) {
-            if(event.button == 1){
-              console.log(jsonObject[i].name);
-
-              $wheelSpinClass.toggle().toggle();
-            }
-          });
+          // .mousedown(function(event) {
+          //   if(event.button == 1){
+          //     console.log(jsonObject[i].name);
+          //
+          //     $wheel.toggle().toggle();
+          //   }
+          // });
 
       }
+
+
 
       $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)'); //центр вращения
       $wheel.css('margin-top','-'+height+'px'); /* negative margin here to keep the element into the center */
@@ -71,6 +73,7 @@
       playSound("spinning/" + spinSounArray[Math.floor(getRandom(spinSounArray.length,0))]);
 
       $wheelSpinClass.addClass('wheelAnimation');
+
         var rotateDeg = getRandom(360,0);
 
         var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
