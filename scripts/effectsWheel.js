@@ -9,9 +9,11 @@
     const circumference = Math.PI * diameter; //длинна окружности
     const height = (circumference / items) + 1; //высота блока
 
-    function getRandom() {
-      return Math.random() * (361 - 0);
+    function getRandom(max, min) {
+      return Math.random() * (max - min);
     }
+
+    var spinSounArray = ["spinSound", "atas", "auf1", "clubbedtodeath1", "fatboy", "napas", "scooter", "scooter2", "takeitboy1", "turbokiller1", "turbokiller2"];
 
     function playSound(name) {
       var soundFile = document.createElement("audio");
@@ -66,13 +68,14 @@
       $("#descriptionName").text('');
       $("#descriptionText").text('');
 
-      playSound("spinSound");
+      playSound("spinning/" + spinSounArray[Math.floor(getRandom(spinSounArray.length,0))]);
 
       $wheelSpinClass.addClass('wheelAnimation');
-        var rotateDeg = getRandom();
+        var rotateDeg = getRandom(360,0);
 
         var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
         var roundedPosition = Math.floor(currentPosition);
+        console.log("rotated: " + rotateDeg + "current: " + currentPosition + " roundedPosition: " + roundedPosition);
 
         $wheelSpinClass.css('transform', 'rotateX(' + rotateDeg + 'deg)');
         setTimeout(function(){
