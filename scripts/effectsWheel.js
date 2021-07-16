@@ -25,13 +25,13 @@
     '[{"type": "buff","name": "Тест","pic": "test.png","description": "стример проходит тесты от сабов. (1-2 в зависимости от длительности) (одноразово) (можно использовать для перерыва)"},'+
     '{"type": "debuff","name": "Даунита","pic": "daynitakostum.png","description": "при выпадении стример надевает пару вещей из своего гардероба (пипоклавн). (на одну игру)"},'+
     '{"type": "debuff","name": "Танцульки","pic": "dance.png","description": "стример выбирает несколько песен предложенных от сабов и из них выбирается одна наиболее подходящая для танца. (одноразово)"},'+
-    '{"type": "buff","name": "Своя игра","pic": "svoyaigra.png","description": "после игр своя игра со стримеров и до 8 сабов с войсом/без в дискорде. Выбор из несколько заранее заготовленных паков. Победитель получает 300 рублей на стим кошелек. (один пак) (одноразово)"},'+
+    '{"type": "buff","name": "Своя игра","pic": "svoyaigra.png","description": "после игр своя игра со стримером и до 8 сабов с войсом/без в дискорда. Выбор из несколько заранее заготовленных паков. Победитель получает 300 рублей на стим кошелек. (один пак) (одноразово)"},'+
     '{"type": "debuff","name": "Экран 180 градусов","pic": "1802.png","description": "на 20 минут у стримера поворачивается экран. (одноразово)"},'+
     '{"type": "debuff","name": "Караокич","pic": "karaoke.png","description": "выбор одной из нескольких песен от сабов и исполнение. (одноразово)"},'+
     '{"type": "buff","name": "Испорченный телефон","pic": "telefon.png","description": "стример играет в испорченный телефон с сабами. (одноразово) (можно использовать для перерыва)"},'+
     '{"type": "debuff","name": "Монеточка","pic": "monetka.png","description": "при выпадении стример кидает монетку. Если падает орел, то добавляет x2 от текущего времени игры(например если осталось 20 минут игры, то умножаешь на 2 и играешь еще дополнительно 20 минут). Если падает решка, то делишь на 2 от текущего времени игры(например если осталось 20 минут игры, то делишь на 2 и играешь только 10 минут)"},'+
     '{"type": "debuff","name": "Черно-белый","pic": "chernbel.png","description": "на 30 минут у стримера включается черно-белый режим на игре. (одноразово)"},'+
-    '{"type": "buff","name": "Легендарный бафф","pic": "legendary.gif","description": "легендарный ролл"},'+
+    '{"type": "legendary","name": "Легендарный бафф","pic": "legendary.gif","description": "легендарный ролл"},'+
     '{"type": "debuff","name": "Сэмплы","pic": "sample.png","description": "до конца стрима включаются сэмплы которые могут юзать только сабы. (на одну игру)"},'+
     '{"type": "debuff","name": "Гачи-тайм","pic": "gachitime.png","description": "включается мубот куда сабы закидывают онли гачи треки. (на одну игру)"},'+
     '{"type": "buff","name": "Алкострим","pic": "alco.png","description": "стример делает глотки за каждого саба + к этому при определенных условиях в играх, например смерть. (на весь стрим)"},'+
@@ -79,7 +79,7 @@
 
         var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
         var roundedPosition = Math.floor(currentPosition);
-        console.log("rotated: " + rotateDeg + "current: " + currentPosition + " roundedPosition: " + roundedPosition);
+        console.log("rotated: " + rotateDeg + " current: " + currentPosition + " roundedPosition: " + roundedPosition);
 
         $wheelSpinClass.css('transform', 'rotateX(' + rotateDeg + 'deg)');
         setTimeout(function(){
@@ -87,6 +87,8 @@
 
           if(jsonObject[roundedPosition].type == "debuff") {
             playSound("sorry");
+          } else if (jsonObject[roundedPosition].type == "legendary") {
+            playSound("legendary");
           } else {
             playSound("what_you_see");
           }
@@ -94,7 +96,7 @@
            $("#descriptionName").text(jsonObject[roundedPosition].name);
            $("#descriptionText").text(jsonObject[roundedPosition].description);
 
-        }, 9200);
+        }, 9300);
      });
 
 } )( jQuery );
