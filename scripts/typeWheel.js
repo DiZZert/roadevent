@@ -14,7 +14,7 @@
     }
 
     var soundFile = document.createElement("audio");
-    soundFile.src = "src/audio/spinSound.mp3";
+    soundFile.src = "src/audio/spinning/spinSound.mp3";
 
     var objArray =
     '[{"type": "buff","name": "Stream Avatars","pic": "avatars.png","description": "стример запускает приложуху https://store.steampowered.com/app/665300/Stream_Avatars/ . Там есть вкладка что бы участовали онли сабы. Внутри приложения есть несколько мини-игр. Победители в них пишут любую желающую игру. Так 8? раз, длительность каждой игры 30? минут. А так же это приложение остается на весь сабдей, что бы сабы бегали на фоне пока стример будет играть в игры."},'+
