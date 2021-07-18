@@ -1,3 +1,4 @@
-# RoadToWin
-Using Phaser 3.55.0\
-Other maybe later
+# Roadhouse subday
+Сам сайт располагается по адресу https://dizzert.github.io/roadevent/subday
+
+Создано все для проведения фановых сабдеев. Первый раз делал что-то на JS, поэтому плохого кода и костылей избежать врядли удалось. Иконки и оформление сделаны Gothicok1.
