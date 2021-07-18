@@ -24,7 +24,7 @@
 }
 
 .description{
-  font-family: NewRocker;
+  font-family: Montserrat;
   pointer-events: none;
 	text-align: center;
   font-size: 24;
@@ -90,6 +90,6 @@ div.wheel_button input {
 }
 
 @font-face {
-    font-family: NewRocker;
-    src: url(../src/fonts/NewRocker_Regular.ttf);
+    font-family: Montserrat;
+    src: url(../src/fonts/Montserrat-Light.ttf);
    }
