@@ -13,10 +13,22 @@
       return Math.random() * (max - min);
     }
 
-    var spinSounArray = ["spinSound", "atas", "auf1", "clubbedtodeath1", "fatboy", "napas", "scooter", "scooter2", "takeitboy1", "turbokiller1", "turbokiller2"];
+    var spinSounArray = [
+      "spinSound",
+      "atas",
+      "auf1",
+      "clubbedtodeath1",
+      "fatboy",
+      "napas",
+      "scooter",
+      "scooter2",
+      "takeitboy1",
+      "turbokiller1",
+      "turbokiller2"
+    ];
 
     var legendaryArray = [
-      "(баф сгорает)",
+      "(бафф сгорает)",
       "поинтовый Аук на следующем стриме",
       "чил Дэй с кс/дотой/настолкой/гвинтом и т.д. на следующем стриме",
       "коллаб с другим стримером на одном из следующих стримов",
