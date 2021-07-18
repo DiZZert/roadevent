@@ -1,46 +1,5 @@
 ( function( $ ) {
 
-    const $wheel = $( '.wheel .wheel__inner' );
-    const $wheelSpinClass = $( '.wheel__inner' );
-    const items = 18;
-    const diameter = $wheel.height();
-    const radius = diameter / 2;
-    const angle = 360 / items; //вычисление угла наклона
-    const circumference = Math.PI * diameter; //длинна окружности
-    const height = (circumference / items) + 1; //высота блока
-
-    function getRandom(max, min) {
-      return Math.random() * (max - min);
-    }
-
-    var spinSounArray = [
-      "spinSound",
-      "atas",
-      "auf1",
-      "clubbedtodeath1",
-      "fatboy",
-      "napas",
-      "scooter",
-      "scooter2",
-      "takeitboy1",
-      "turbokiller1",
-      "turbokiller2"
-    ];
-
-    var legendaryArray = [
-      "(бафф сгорает)",
-      "поинтовый Аук на следующем стриме",
-      "чил Дэй с кс/дотой/настолкой/гвинтом и т.д. на следующем стриме",
-      "коллаб с другим стримером на одном из следующих стримов",
-      "донатный Аук на следующем стриме"
-    ]
-
-    function playSound(name) {
-      var soundFile = document.createElement("audio");
-      soundFile.src = "src/audio/" + name + ".mp3";
-      soundFile.play();
-    }
-
     var effectsArray =
     '[{"type": "buff","name": "Тест","pic": "test.png","description": "стример проходит тесты от сабов. (1-2 в зависимости от длительности) (одноразово) (можно использовать для перерыва)"},'+
     '{"type": "debuff","name": "Даунита","pic": "daynitakostum.png","description": "при выпадении стример надевает пару вещей из своего гардероба (пипоклавн). (на одну игру)"},'+
@@ -51,7 +10,7 @@
     '{"type": "buff","name": "Испорченный телефон","pic": "telefon.png","description": "стример играет в испорченный телефон с сабами. (одноразово) (можно использовать для перерыва)"},'+
     '{"type": "debuff","name": "Монеточка","pic": "monetka.png","description": "при выпадении стример кидает монетку. Если падает орел, то добавляет x2 от текущего времени игры(например если осталось 20 минут игры, то умножаешь на 2 и играешь еще дополнительно 20 минут). Если падает решка, то делишь на 2 от текущего времени игры(например если осталось 20 минут игры, то делишь на 2 и играешь только 10 минут)"},'+
     '{"type": "debuff","name": "Черно-белый","pic": "chernbel.png","description": "на 30 минут у стримера включается черно-белый режим на игре. (одноразово)"},'+
-    '{"type": "legendary","name": "Легендарный бафф","pic": "legendary.gif","description": "легендарный ролл"},'+
+    '{"type": "legendary","name": "Легендарный бафф","pic": "legendary.gif","description": ""},'+
     '{"type": "debuff","name": "Сэмплы","pic": "sample.png","description": "до конца стрима включаются сэмплы которые могут юзать только сабы. (на одну игру)"},'+
     '{"type": "debuff","name": "Гачи-тайм","pic": "gachitime.png","description": "включается мубот куда сабы закидывают онли гачи треки. (на одну игру)"},'+
     '{"type": "buff","name": "Алкострим","pic": "alco.png","description": "стример делает глотки за каждого саба + к этому при определенных условиях в играх, например смерть. (на весь стрим)"},'+
@@ -64,60 +23,106 @@
 
     var jsonObject = jQuery.parseJSON(effectsArray);
 
-      //создание окружности из заданного количесва элементов
-      for ( let i = 0; i < jsonObject.length; i++ ) {
-          var transform = `rotateX(${ angle * i }deg) translateZ(${ radius }px)`;
+    function getRandom(max, min) {
+      return Math.random() * (max - min);
+    }
 
-          $( '<div>', {class: 'wheel__segment'} )
-          .html( `<span> <img src="src/assets/wheel_icons/effects/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
-          .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
-          // .click(function() { $("#descriptionName").text(jsonObject[i].name), $("#descriptionText").text(jsonObject[i].description) });
-      }
+    function playSound(name) {
+      var soundFile = document.createElement("audio");
+      soundFile.src = "src/audio/" + name + ".mp3";
+      soundFile.play();
+    }
 
-      $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)'); //центр вращения
-      $wheel.css('margin-top','-'+height+'px'); /* negative margin here to keep the element into the center */
+    function doWheel(data) {
 
-    $( ".wheel_button input[type=submit]" ).click(function( event ) {
+      const $wheel = $( '.wheel .wheel__inner' );
+      const $wheelSpinClass = $( '.wheel__inner' );
+      let items = data.length;
+      const diameter = $wheel.height();
+      const radius = diameter / 2;
+      const angle = 360 / items; //вычисление угла наклона
+      const circumference = Math.PI * diameter; //длинна окружности
+      const height = (circumference / items) + 1; //высота блока
 
-      $("#descriptionName").text('');
-      $("#descriptionText").text('');
+      var spinSounArray = [
+        "spinSound",
+        "atas",
+        "auf1",
+        "clubbedtodeath1",
+        "fatboy",
+        "napas",
+        "scooter",
+        "scooter2",
+        "takeitboy1",
+        "turbokiller1",
+        "turbokiller2"
+      ];
 
-      playSound("spinning/" + spinSounArray[Math.floor(getRandom(spinSounArray.length,0))]);
+      var legendaryArray = [
+        "(бафф сгорает)",
+        "поинтовый Аук на следующем стриме",
+        "чил Дэй с кс/дотой/настолкой/гвинтом и т.д. на следующем стриме",
+        "коллаб с другим стримером на одном из следующих стримов",
+        "донатный Аук на следующем стриме"
+      ]
+        //создание окружности из заданного количесва элементов
+        for ( let i = 0; i < jsonObject.length; i++ ) {
+            var transform = `rotateX(${ angle * i }deg) translateZ(${ radius }px)`;
 
-      $wheelSpinClass.addClass('wheelAnimation');
+            $( '<div>', {class: 'wheel__segment'} )
+            .html( `<span> <img src="src/assets/wheel_icons/effects/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
+            .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
+            .click(function() { bannedBuffs.push(jsonObject[i].name); console.log(bannedBuffs); });
+        }
 
-        var rotateDeg = getRandom(360,0);
+        $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)'); //центр вращения
+        $wheel.css('margin-top','-'+height+'px'); /* negative margin here to keep the element into the center */
 
-        var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
-        var roundedPosition = Math.floor(currentPosition);
+      $( ".wheel_button input[type=submit]" ).click(function( event ) {
 
-        // var roundedPosition = 9;
-        // console.log("rotated: " + rotateDeg + " current: " + currentPosition + " roundedPosition: " + roundedPosition);
+        $("#descriptionName").text('');
+        $("#descriptionText").text('');
 
-        $wheelSpinClass.css('transform', 'rotateX(' + rotateDeg + 'deg)');
-        setTimeout(function(){
-          $wheelSpinClass.removeClass('wheelAnimation');
+        playSound("spinning/" + spinSounArray[Math.floor(getRandom(spinSounArray.length,0))]);
 
-          $("#descriptionName").text(jsonObject[roundedPosition].name);
-          $("#descriptionText").text(jsonObject[roundedPosition].description);
+        $wheelSpinClass.addClass('wheelAnimation');
 
-          if(jsonObject[roundedPosition].type == "debuff") {
-            playSound("sorry");
-          } else if (jsonObject[roundedPosition].type == "legendary") {
-            playSound("legendary");
+          var rotateDeg = getRandom(360,0);
 
-            let legendaryPosition = Math.floor(getRandom(legendaryArray.length, 0))
-            $("#descriptionText").text(legendaryArray[legendaryPosition]);
+          var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
+          var roundedPosition = Math.floor(currentPosition);
 
-            if (legendaryPosition == 0) {
-              console.log("peepoClown");
+          // var roundedPosition = 9;
+          // console.log("rotated: " + rotateDeg + " current: " + currentPosition + " roundedPosition: " + roundedPosition);
+
+          $wheelSpinClass.css('transform', 'rotateX(' + rotateDeg + 'deg)');
+          setTimeout(function(){
+            $wheelSpinClass.removeClass('wheelAnimation');
+
+            $("#descriptionName").text(jsonObject[roundedPosition].name);
+            $("#descriptionText").text(jsonObject[roundedPosition].description);
+
+            if(jsonObject[roundedPosition].type == "debuff") {
+              playSound("sorry");
+            } else if (jsonObject[roundedPosition].type == "legendary") {
+              playSound("legendary");
+
+              let legendaryPosition = Math.floor(getRandom(legendaryArray.length, 0))
+              $("#descriptionText").text(legendaryArray[legendaryPosition]);
+
+              if (legendaryPosition == 0) {
+                console.log("peepoClown");
+              }
+
+            } else {
+              playSound("what_you_see");
             }
 
-          } else {
-            playSound("what_you_see");
-          }
+          }, 9300);
+       });
 
-        }, 9300);
-     });
+    }
+
+    doWheel(jsonObject);
 
 } )( jQuery );
