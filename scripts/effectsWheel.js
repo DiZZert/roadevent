@@ -15,6 +15,14 @@
 
     var spinSounArray = ["spinSound", "atas", "auf1", "clubbedtodeath1", "fatboy", "napas", "scooter", "scooter2", "takeitboy1", "turbokiller1", "turbokiller2"];
 
+    var legendaryArray = [
+      "(баф сгорает)",
+      "поинтовый Аук на следующем стриме",
+      "чил Дэй с кс/дотой/настолкой/гвинтом и т.д. на следующем стриме",
+      "коллаб с другим стримером на одном из следующих стримов",
+      "донатный Аук на следующем стриме"
+    ]
+
     function playSound(name) {
       var soundFile = document.createElement("audio");
       soundFile.src = "src/audio/" + name + ".mp3";
@@ -52,16 +60,7 @@
           .html( `<span> <img src="src/assets/wheel_icons/effects/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
           .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
           // .click(function() { $("#descriptionName").text(jsonObject[i].name), $("#descriptionText").text(jsonObject[i].description) });
-          // .mousedown(function(event) {
-          //   if(event.button == 1){
-          //     console.log(jsonObject[i].name);
-          //
-          //     $wheel.toggle().toggle();
-          //   }
-          // });
       }
-
-
 
       $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)'); //центр вращения
       $wheel.css('margin-top','-'+height+'px'); /* negative margin here to keep the element into the center */
@@ -79,22 +78,32 @@
 
         var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
         var roundedPosition = Math.floor(currentPosition);
-        console.log("rotated: " + rotateDeg + " current: " + currentPosition + " roundedPosition: " + roundedPosition);
+
+        // var roundedPosition = 9;
+        // console.log("rotated: " + rotateDeg + " current: " + currentPosition + " roundedPosition: " + roundedPosition);
 
         $wheelSpinClass.css('transform', 'rotateX(' + rotateDeg + 'deg)');
         setTimeout(function(){
           $wheelSpinClass.removeClass('wheelAnimation');
 
+          $("#descriptionName").text(jsonObject[roundedPosition].name);
+          $("#descriptionText").text(jsonObject[roundedPosition].description);
+
           if(jsonObject[roundedPosition].type == "debuff") {
             playSound("sorry");
           } else if (jsonObject[roundedPosition].type == "legendary") {
             playSound("legendary");
+
+            let legendaryPosition = Math.floor(getRandom(legendaryArray.length, 0))
+            $("#descriptionText").text(legendaryArray[legendaryPosition]);
+
+            if (legendaryPosition == 0) {
+              console.log("peepoClown");
+            }
+
           } else {
             playSound("what_you_see");
           }
-
-           $("#descriptionName").text(jsonObject[roundedPosition].name);
-           $("#descriptionText").text(jsonObject[roundedPosition].description);
 
         }, 9300);
      });
