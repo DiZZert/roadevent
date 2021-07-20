@@ -45,6 +45,8 @@
 
     var jsonObject = jQuery.parseJSON(effectsArray);
 
+    var deletedEffects = [];
+
     function getRandom(max, min) {
       return Math.random() * (max - min);
     }
@@ -57,32 +59,50 @@
 
     function doWheel(data) {
 
-      const $wheel = $( '.wheel .wheel__inner' );
-      const $wheelSpinClass = $( '.wheel__inner' );
-      let items = data.length;
-      const diameter = $wheel.height();
-      const radius = diameter / 2;
-      const angle = 360 / items; //вычисление угла наклона
-      const circumference = Math.PI * diameter; //длинна окружности
-      const height = (circumference / items) + 1; //высота блока
+      $( ".wheel_button input[type=submit]" ).click(function( event ) {
 
-        //создание окружности из заданного количесва элементов
-        for ( let i = 0; i < jsonObject.length; i++ ) {
+        $( '.wheel__inner' ).empty()
+
+        let result = [];
+        $.grep(jsonObject, function(item) {
+          if ($.inArray(item, deletedEffects) == -1) result.push(item);
+        });
+        console.log(deletedEffects);
+        console.log(jsonObject);
+        console.log(result);
+
+        jsonObject = result;
+
+        const $wheel = $( '.wheel .wheel__inner' );
+        const $wheelSpinClass = $( '.wheel__inner' );
+        let items = jsonObject.length;
+        console.log(items);
+        let diameter = $wheel.height();
+        let radius = diameter / 2;
+        let angle = 360 / items; //вычисление угла наклона
+        let circumference = Math.PI * diameter; //длинна окружности
+        console.log(deletedEffects.length);
+        let height = (circumference / items) + 1; //высота блока
+
+        for ( let i = 0; i < result.length; i++ ) {
             var transform = `rotateX(${ angle * i }deg) translateZ(${ radius }px)`;
 
             $( '<div>', {class: 'wheel__segment'} )
             .html( `<span> <img src="src/assets/wheel_icons/effects/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
             .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
             .click(function() {
-              // bannedBuffs.push(jsonObject[i].name);
+
+              deletedEffects.push(jsonObject[i]);
+              // jsonObject = result;
               console.log(jsonObject[i]);
             });
         }
-
         $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)'); //центр вращения
         $wheel.css('margin-top','-'+height+'px'); /* negative margin here to keep the element into the center */
 
-      $( ".wheel_button input[type=submit]" ).click(function( event ) {
+        $wheel.change();
+
+        // $( '<div>', {class: 'wheel__segment'} ).toggle().toggle();
 
         $("#descriptionName").text('');
         $("#descriptionText").text('');
@@ -97,7 +117,7 @@
           var roundedPosition = Math.floor(currentPosition);
 
           // var roundedPosition = 9;
-          // console.log("rotated: " + rotateDeg + " current: " + currentPosition + " roundedPosition: " + roundedPosition);
+          console.log("rotated: " + rotateDeg + " current: " + currentPosition + " roundedPosition: " + roundedPosition);
 
           $wheelSpinClass.css('transform', 'rotateX(' + rotateDeg + 'deg)');
           setTimeout(function(){
@@ -113,10 +133,6 @@
 
               let legendaryPosition = Math.floor(getRandom(legendaryArray.length, 0))
               $("#descriptionText").text(legendaryArray[legendaryPosition]);
-
-              // if (legendaryPosition == 0) {
-              //   console.log("peepoClown");
-              // }
 
             } else {
               playSound("what_you_see");
