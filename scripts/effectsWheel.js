@@ -75,7 +75,7 @@
             .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
             .click(function() {
               // bannedBuffs.push(jsonObject[i].name);
-              // console.log(bannedBuffs);
+              console.log(jsonObject[i]);
             });
         }
 
