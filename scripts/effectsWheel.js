@@ -21,6 +21,28 @@
     '{"type": "debuff","name": "Минимальные настройки","pic": "nazadvpro.png","description": "на 20 минут у стримера включается минимальные настройки (одноразово)"}]';
     ;
 
+    var spinSounArray = [
+      "spinSound",
+      "atas",
+      "auf1",
+      "clubbedtodeath1",
+      "fatboy",
+      "napas",
+      "scooter",
+      "scooter2",
+      "takeitboy1",
+      "turbokiller1",
+      "turbokiller2"
+    ];
+
+    var legendaryArray = [
+      "(бафф сгорает)",
+      "поинтовый Аук на следующем стриме",
+      "чил Дэй с кс/дотой/настолкой/гвинтом и т.д. на следующем стриме",
+      "коллаб с другим стримером на одном из следующих стримов",
+      "донатный Аук на следующем стриме"
+    ];
+
     var jsonObject = jQuery.parseJSON(effectsArray);
 
     function getRandom(max, min) {
@@ -44,27 +66,6 @@
       const circumference = Math.PI * diameter; //длинна окружности
       const height = (circumference / items) + 1; //высота блока
 
-      var spinSounArray = [
-        "spinSound",
-        "atas",
-        "auf1",
-        "clubbedtodeath1",
-        "fatboy",
-        "napas",
-        "scooter",
-        "scooter2",
-        "takeitboy1",
-        "turbokiller1",
-        "turbokiller2"
-      ];
-
-      var legendaryArray = [
-        "(бафф сгорает)",
-        "поинтовый Аук на следующем стриме",
-        "чил Дэй с кс/дотой/настолкой/гвинтом и т.д. на следующем стриме",
-        "коллаб с другим стримером на одном из следующих стримов",
-        "донатный Аук на следующем стриме"
-      ]
         //создание окружности из заданного количесва элементов
         for ( let i = 0; i < jsonObject.length; i++ ) {
             var transform = `rotateX(${ angle * i }deg) translateZ(${ radius }px)`;
@@ -72,7 +73,10 @@
             $( '<div>', {class: 'wheel__segment'} )
             .html( `<span> <img src="src/assets/wheel_icons/effects/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
             .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
-            .click(function() { bannedBuffs.push(jsonObject[i].name); console.log(bannedBuffs); });
+            .click(function() {
+              // bannedBuffs.push(jsonObject[i].name);
+              // console.log(bannedBuffs);
+            });
         }
 
         $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)'); //центр вращения
@@ -110,9 +114,9 @@
               let legendaryPosition = Math.floor(getRandom(legendaryArray.length, 0))
               $("#descriptionText").text(legendaryArray[legendaryPosition]);
 
-              if (legendaryPosition == 0) {
-                console.log("peepoClown");
-              }
+              // if (legendaryPosition == 0) {
+              //   console.log("peepoClown");
+              // }
 
             } else {
               playSound("what_you_see");
