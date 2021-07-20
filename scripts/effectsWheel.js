@@ -93,6 +93,7 @@
             .click(function() {
 
               deletedEffects.push(jsonObject[i]);
+              playSound("spank");
               // jsonObject = result;
               console.log(jsonObject[i]);
             });
