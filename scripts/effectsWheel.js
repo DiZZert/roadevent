@@ -118,6 +118,8 @@
         $("#descriptionName").text('');
         $("#descriptionText").text('');
 
+        playSound("spinning/" + spinSounArray[Math.floor(getRandom(spinSounArray.length,0))]);
+
         $wheelSpinClass.addClass('wheelAnimation');
 
           var rotateDeg = getRandom(360,angle/2);
