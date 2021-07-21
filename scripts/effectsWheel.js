@@ -59,6 +59,26 @@
 
     function doWheel(data) {
 
+      const $wheel = $( '.wheel .wheel__inner' );
+      const $wheelSpinClass = $( '.wheel__inner' );
+      let items = jsonObject.length;
+      let diameter = $wheel.height();
+      let radius = diameter / 2;
+      let angle = 360 / items;
+      let circumference = Math.PI * diameter;
+      let height = (circumference / items) + 1;
+
+      for ( let i = 0; i < jsonObject.length; i++ ) {
+
+          var transform = `rotateX(${ angle * i }deg) translateZ(${ radius }px)`;
+          $( '<div>', {class: 'wheel__segment'} )
+          .html( `<span> <img src="src/assets/wheel_icons/effects/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
+          .css( {'transform': transform,'height': height, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
+
+      }
+      $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)');
+      $wheel.css('margin-top','-'+height+'px');
+
       $( ".wheel_button input[type=submit]" ).click(function( event ) {
 
         $( '.wheel__inner' ).empty()
@@ -70,14 +90,12 @@
 
         jsonObject = result;
 
-        const $wheel = $( '.wheel .wheel__inner' );
-        const $wheelSpinClass = $( '.wheel__inner' );
         let items = jsonObject.length;
         let diameter = $wheel.height();
         let radius = diameter / 2;
-        let angle = 360 / items; //вычисление угла наклона
-        let circumference = Math.PI * diameter; //длинна окружности
-        let height = (circumference / items) + 1; //высота блока
+        let angle = 360 / items;
+        let circumference = Math.PI * diameter;
+        let height = (circumference / items) + 1;
 
         for ( let i = 0; i < result.length; i++ ) {
             var transform = `rotateX(${ angle * i }deg) translateZ(${ radius }px)`;
@@ -92,8 +110,8 @@
               console.log(jsonObject[i]);
             });
         }
-        $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)'); //центр вращения
-        $wheel.css('margin-top','-'+height+'px'); /* negative margin here to keep the element into the center */
+        $wheel.css('transform-origin','50% calc(50% + '+height/2+'px)');
+        $wheel.css('margin-top','-'+height+'px');
 
         $wheel.change();
 
