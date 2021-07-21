@@ -19,7 +19,9 @@
   /* height: 60%; */
   /* width: 35%; */
   left: 32.15%;
-  top: 10%;
+  /* top: 10%;  */
+  top: 50%;
+  transform: translateY(-56.15%);
   z-index: 3;
 }
 

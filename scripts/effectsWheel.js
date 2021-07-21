@@ -67,21 +67,16 @@
         $.grep(jsonObject, function(item) {
           if ($.inArray(item, deletedEffects) == -1) result.push(item);
         });
-        // console.log(deletedEffects);
-        // console.log(jsonObject);
-        // console.log(result);
 
         jsonObject = result;
 
         const $wheel = $( '.wheel .wheel__inner' );
         const $wheelSpinClass = $( '.wheel__inner' );
         let items = jsonObject.length;
-        // console.log(items);
         let diameter = $wheel.height();
         let radius = diameter / 2;
         let angle = 360 / items; //вычисление угла наклона
         let circumference = Math.PI * diameter; //длинна окружности
-        // console.log(deletedEffects.length);
         let height = (circumference / items) + 1; //высота блока
 
         for ( let i = 0; i < result.length; i++ ) {
@@ -94,7 +89,6 @@
 
               deletedEffects.push(jsonObject[i]);
               playSound("spank");
-              // jsonObject = result;
               console.log(jsonObject[i]);
             });
         }
@@ -103,12 +97,8 @@
 
         $wheel.change();
 
-        // $( '<div>', {class: 'wheel__segment'} ).toggle().toggle();
-
         $("#descriptionName").text('');
         $("#descriptionText").text('');
-
-        // playSound("spinning/" + spinSounArray[Math.floor(getRandom(spinSounArray.length,0))]);
 
         $wheelSpinClass.addClass('wheelAnimation');
 
@@ -117,7 +107,6 @@
           var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
           var roundedPosition = Math.floor(currentPosition);
 
-          // var roundedPosition = 9;
           console.log("rotated: " + rotateDeg + " current: " + currentPosition + " roundedPosition: " + roundedPosition);
 
           $wheelSpinClass.css('transform', 'rotateX(' + rotateDeg + 'deg)');
