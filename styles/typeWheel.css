@@ -83,7 +83,7 @@ div.wheel_button input {
 }
 
 .wheelAnimation {
-  animation: 27s ease-in 1 reverse spinWheel;
+  animation: 26s ease-in 1 reverse spinWheel;
 }
 
 @-webkit-keyframes spinWheel {
