@@ -25,6 +25,22 @@
   z-index: 3;
 }
 
+.legendaryDesc{
+  font-family: Montserrat;
+  pointer-events: none;
+	text-align: center;
+  font-size: 24;
+  color: white;
+	position: absolute;
+  width: 24%;
+	z-index: 10;
+  top: 48%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow:0px 1px 0 rgb(0,0,0),0px -1px 0 rgb(0,0,0),1px 0px 0 rgb(0,0,0),-1px 0px 0 rgb(0,0,0),1px 1px 0 rgb(0,0,0),1px -1px 0 rgb(0,0,0),-1px 1px 0 rgb(0,0,0),-1px -1px 0 rgb(0,0,0);
+}
+
 .description{
   font-family: Montserrat;
   pointer-events: none;

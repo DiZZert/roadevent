@@ -117,6 +117,7 @@
 
         $("#descriptionName").text('');
         $("#descriptionText").text('');
+        $("#descriptionLegendary").text('');
 
         playSound("spinning/" + spinSounArray[Math.floor(getRandom(spinSounArray.length,0))]);
 
@@ -124,7 +125,8 @@
 
           var rotateDeg = getRandom(360,angle/2);
 
-          var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
+          // var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
+          var currentPosition = 9;
           var roundedPosition = Math.floor(currentPosition);
 
           console.log("rotated: " + rotateDeg + " current: " + currentPosition + " roundedPosition: " + roundedPosition);
@@ -142,7 +144,8 @@
               playSound("legendary");
 
               let legendaryPosition = Math.floor(getRandom(legendaryArray.length, 0))
-              $("#descriptionText").text(legendaryArray[legendaryPosition]);
+              $("#descriptionName").text('');
+              $("#descriptionLegendary").text(legendaryArray[legendaryPosition]);
 
             } else {
               playSound("what_you_see");
