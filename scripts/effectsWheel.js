@@ -125,8 +125,8 @@
 
           var rotateDeg = getRandom(360,angle/2);
 
-          // var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
-          var currentPosition = 9;
+          var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
+          // var currentPosition = 9;
           var roundedPosition = Math.floor(currentPosition);
 
           console.log("rotated: " + rotateDeg + " current: " + currentPosition + " roundedPosition: " + roundedPosition);
@@ -141,7 +141,7 @@
             if(jsonObject[roundedPosition].type == "debuff") {
               playSound("sorry");
             } else if (jsonObject[roundedPosition].type == "legendary") {
-              playSound("legendary");
+              // playSound("legendary");
 
               let legendaryPosition = Math.floor(getRandom(legendaryArray.length, 0))
               $("#descriptionName").text('');
