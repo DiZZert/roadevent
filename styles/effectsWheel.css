@@ -26,13 +26,13 @@
 }
 
 .legendaryDesc{
-  font-family: Montserrat;
+  font-family: MontserratMedium;
   pointer-events: none;
 	text-align: center;
-  font-size: 24;
+  font-size: 36;
   color: white;
 	position: absolute;
-  width: 24%;
+  width: 30%;
 	z-index: 10;
   top: 48%;
   transform: translateY(-50%);
