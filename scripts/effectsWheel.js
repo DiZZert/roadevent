@@ -145,7 +145,13 @@
 
               let legendaryPosition = Math.floor(getRandom(legendaryArray.length, 0))
               $("#descriptionName").text('');
-              $("#descriptionLegendary").text(legendaryArray[legendaryPosition]);
+
+              $("#descriptionLegendary").addClass('spin');
+
+              setTimeout(function(){
+                $("#descriptionLegendary").removeClass('spin');
+                $("#descriptionLegendary").text(legendaryArray[legendaryPosition]);
+              }, 2000);
 
             } else {
               playSound("what_you_see");

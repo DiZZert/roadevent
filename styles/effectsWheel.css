@@ -26,6 +26,7 @@
 }
 
 .legendaryDesc{
+
   font-family: MontserratMedium;
   pointer-events: none;
 	text-align: center;
@@ -34,7 +35,7 @@
 	position: absolute;
   width: 30%;
 	z-index: 10;
-  top: 48%;
+  top: 46%;
   transform: translateY(-50%);
   left: 50%;
   transform: translateX(-50%);
@@ -105,6 +106,18 @@ div.wheel_button input {
   animation: 9s ease-in 1 reverse spinWheel;
 }
 
+.spin:after {
+  content:"";
+  animation: spin 0.4s linear 5;
+}
+@keyframes spin {
+  0% { content:"(бафф сгорает)"; }
+  20% { content:"кинодень на следующем стриме"; }
+  40% { content:"чил Дэй с кс/дотой/настолкой/гвинтом и т.д. на следующем стриме"; }
+  60% { content:"коллаб с другим стримером на одном из следующих стримов"; }
+  80% { content:"донатный Аук на следующем стриме"; }
+}
+
 @-webkit-keyframes spinWheel {
   to {transform: rotateX(3600deg);}
 }
@@ -112,4 +125,9 @@ div.wheel_button input {
 @font-face {
     font-family: Montserrat;
     src: url(../src/fonts/Montserrat-Light.ttf);
-   }
+}
+
+@font-face {
+    font-family: MontserratMedium;
+    src: url(../src/fonts/Montserrat-Medium.ttf);
+}
