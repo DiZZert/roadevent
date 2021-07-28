@@ -141,7 +141,7 @@
             if(jsonObject[roundedPosition].type == "debuff") {
               playSound("sorry");
             } else if (jsonObject[roundedPosition].type == "legendary") {
-              // playSound("legendary");
+              playSound("legendary");
 
               let legendaryPosition = Math.floor(getRandom(legendaryArray.length, 0))
               $("#descriptionName").text('');
