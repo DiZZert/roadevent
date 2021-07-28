@@ -1,16 +1,22 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="style.css">
-  <title>Roadhouse event</title>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
-
+<title>Roadhouse subday</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/subday.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
 <body>
 
-  <script src="tmp/map_mark.js"></script>
+<iframe id="wheelFrame" src="sdtype-wheel.html" width="100%" height="100%" frameborder="0"> </iframe>
+
+<p><img class="nav_panel" src="src\nizhnayaPanel.png" usemap="#map" alt="Навигация"></p>
+  <p><map name="map">
+    <area class="twheel_button" target="" alt="ap" title="стили" coords="12,49,629,94" shape="rect">
+    <area class="ewheel_button" target="" alt="op" title="баффы/дебаффы" coords="766,52,1384,92" shape="rect">
+  </map></p>
+
+<script src="scripts/subday.js"></script>
 
 </body>
 </html>
