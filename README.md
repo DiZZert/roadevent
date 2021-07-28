@@ -1,5 +1,5 @@
 # Roadhouse subday
-Сам сайт располагается по адресу https://dizzert.github.io/roadevent/subday
+Сам сайт располагается по адресу https://dizzert.github.io/subday
 
 Содержит часть сцены и предназначено для встраивания в сцену OBS.
 
