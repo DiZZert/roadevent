@@ -1,0 +1,133 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.wheel_block{
+  margin-right: 0;
+}
+
+.bc_image{
+	text-align: center;
+	position: relative;
+	z-index: 1;
+}
+
+.wheel_frame{
+  pointer-events: none;
+	/* text-align: center; */
+	position: fixed;
+  /* height: 60%; */
+  /* width: 35%; */
+  left: 32.15%;
+  /* top: 10%;  */
+  top: 50%;
+  transform: translateY(-56.15%);
+  z-index: 3;
+}
+
+.legendaryDesc{
+
+  font-family: MontserratMedium;
+  pointer-events: none;
+	text-align: center;
+  font-size: 36;
+  color: white;
+	position: absolute;
+  width: 30%;
+	z-index: 10;
+  top: 46%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow:0px 1px 0 rgb(0,0,0),0px -1px 0 rgb(0,0,0),1px 0px 0 rgb(0,0,0),-1px 0px 0 rgb(0,0,0),1px 1px 0 rgb(0,0,0),1px -1px 0 rgb(0,0,0),-1px 1px 0 rgb(0,0,0),-1px -1px 0 rgb(0,0,0);
+}
+
+.description{
+  font-family: Montserrat;
+  pointer-events: none;
+	text-align: center;
+  font-size: 24;
+  color: white;
+	position: absolute;
+  left: 66%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24%;
+	/* z-index: 999; */
+  text-shadow:0px 1px 0 rgb(0,0,0),0px -1px 0 rgb(0,0,0),1px 0px 0 rgb(0,0,0),-1px 0px 0 rgb(0,0,0),1px 1px 0 rgb(0,0,0),1px -1px 0 rgb(0,0,0),-1px 1px 0 rgb(0,0,0),-1px -1px 0 rgb(0,0,0);
+}
+
+#descriptionName{
+  font-size: 32;
+  font-weight: bold;
+}
+
+div.wheel_button input {
+    background:url(../src/knopkaKrutit1.png) no-repeat;
+    cursor:pointer;
+    width: 180px;
+    height: 70px;
+    border: none;
+    text-align: center;
+    position: fixed;
+    left: 45.3%;
+    top: 74.8%;
+    z-index: 3;
+}
+
+.wheel {
+  display: block;
+	position: fixed;
+  width: 13%;
+  perspective: 1000px;
+  left: 43.7%;
+  top: 50%;
+  transform: translateY(-59.5%);
+	z-index: 2;
+}
+.wheel__inner {
+  /* width: 250px; */
+  height: 450px;
+  margin: 0 auto ;
+  transform-style: preserve-3d;
+}
+.wheel .wheel__inner .wheel__segment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  background-image: url(../src/assets/wheel_img/debuff1.png);
+}
+
+.wheelAnimation {
+  animation: 9s ease-in 1 reverse spinWheel;
+}
+
+.spin:after {
+  content:"";
+  animation: spin 0.4s linear 5;
+}
+@keyframes spin {
+  0% { content:"пусечная"; }
+  20% { content:"стремач"; }
+  40% { content:"вырубай"; }
+  60% { content:"ну нахуй"; }
+  80% { content:"РЕЗНЯ"; }
+}
+
+@-webkit-keyframes spinWheel {
+  to {transform: rotateX(3600deg);}
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../src/fonts/Montserrat-Light.ttf);
+}
+
+@font-face {
+    font-family: MontserratMedium;
+    src: url(../src/fonts/Montserrat-Medium.ttf);
+}
