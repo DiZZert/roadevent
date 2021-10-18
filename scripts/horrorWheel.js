@@ -1,25 +1,25 @@
 ( function( $ ) {
 
   var effectsArray =
-  '[{"type": "buff","name": "empty","pic": "test.png","description": "при каждом твоем крике - сабка"},'+
-  '{"type": "buff","name": "empty","pic": "test.png","description": "семплы со скримерами"},'+
+  '[{"type": "buff","name": "Да ваще не страшно","pic": "test.png","description": "при каждом твоем крике - сабка"},'+
+  '{"type": "buff","name": "Откукда звуки?!","pic": "test.png","description": "семплы со скримерами"},'+
   '{"type": "buff","name": "Ну нахер","pic": "test.png","description": "повышение градуса самого хоррора (от пусеченых до самых страшных)"},'+
-  '{"type": "buff","name": "empty","pic": "test.png","description": "плюс игра, минус игра"},'+
-  '{"type": "buff","name": "empty","pic": "test.png","description": "выключить свет"},'+
+  '{"type": "buff","name": "В бездну список","pic": "test.png","description": "плюс игра, минус игра"},'+
+  '{"type": "buff","name": "Повелитель ночи","pic": "test.png","description": "выключить свет"},'+
   '{"type": "buff","name": "Пьянка с ебаками","pic": "test.png","description": "алко обсёр (додумать) выпивать за каждый напуг"},'+
-  '{"type": "buff","name": "empty","pic": "test.png","description": "сидеть какое то время с фанариком у подбородка (додумать мб?)"},'+
-  '{"type": "buff","name": "empty","pic": "test.png","description": "Пульсометр (превысил какое значение че то делаешь) - крутится колесо, но это может произойти только один раз за стрим."},'+
+  '{"type": "buff","name": "Супер сус","pic": "test.png","description": "сидеть какое то время с фанариком у подбородка (додумать мб?)"},'+
+  '{"type": "buff","name": "140 BPM","pic": "test.png","description": "Пульсометр (превысил какое значение че то делаешь) - крутится колесо, но это может произойти только один раз за стрим."},'+
   '{"type": "buff","name": "empty","pic": "test.png","description": "кто больше всего раз крикнет или явно испугается дарит 50 сабок на канал победителя (в случае если коллаб ивент)"},'+
   '{"type": "buff","name": "Не хочу умирац","pic": "test.png","description": "Следующая игра ролится из категории супер страшные"},'+
   '{"type": "buff","name": "Outlast","pic": "test.png","description": "Временно накатить на вебку фильтр ночного виденья"},'+
-  '{"type": "buff","name": "empty","pic": "test.png","description": "страшные алерты"},'+
+  '{"type": "buff","name": "Welcome to the family son","pic": "test.png","description": "страшные алерты"},'+
   '{"type": "buff","name": "empty","pic": "test.png","description": "прикол с громкостью (?)"},'+
   '{"type": "buff","name": "Коричневые паруса","pic": "test.png","description": "пойти сменить труханы и показать на стриме сами труханы без себя"},'+
   '{"type": "buff","name": "200 IQ","pic": "test.png","description": "если не можешь пройти загадку за 5 мин, то пьешь че-то или что-то еще"},'+
-  '{"type": "buff","name": "empty","pic": "test.png","description": "Что-то за геймоверы"},'+
-  '{"type": "buff","name": "empty","pic": "test.png","description": "Переход через категорию. Если и вы и так на максимальной категории, то воля случая. Орел - плюс игры; Решка - повезло."},'+
+  '{"type": "buff","name": "(\/) MLG (\/)","pic": "test.png","description": "Что-то за геймоверы"},'+
+  '{"type": "buff","name": "Судьба","pic": "test.png","description": "Переход через категорию. Если и вы и так на максимальной категории, то воля случая. Орел - плюс игры; Решка - повезло."},'+
   '{"type": "buff","name": "Повезло повезло","pic": "test.png","description": "Понижение категории"},'+
-  '{"type": "buff","name": "empty","pic": "test.png","description": "следующая игра будет на текущей категории"},'+
+  '{"type": "buff","name": "Стабильность","pic": "test.png","description": "следующая игра будет на текущей категории"},'+
   '{"type": "buff","name": "Есть два стула","pic": "test.png","description": "Стримерский стул меняется на табуретку. Если стример упал с табуретки от испуга - что-то?"},'+
   '{"type": "buff","name": "Киновечер","pic": "test.png","description": "с фильмом ужасов (выбор из списка, заказанного зрителями)"},'+
   '{"type": "legendary","name": "empty","pic": "test.png","description": ""},'+
