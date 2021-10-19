@@ -1,3 +1,7 @@
+body{
+  background-color: green;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -15,13 +19,15 @@
 .wheel_frame{
   pointer-events: none;
 	/* text-align: center; */
-	position: fixed;
+	position: absolute;
   /* height: 60%; */
   /* width: 35%; */
-  left: 32.15%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 556px;
   /* top: 10%;  */
-  top: 50%;
-  transform: translateY(-56.15%);
+  /* top: 50%;
+  transform: translateY(-50%); */
   z-index: 3;
 }
 
