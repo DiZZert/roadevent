@@ -82,7 +82,8 @@
           var transform = `rotateY(${ angle * i }deg) translateZ(${ radius }px)`;
           $( '<div>', {class: 'wheel__segment'} )
           .html( `<span> <img src="src/assets/wheel_horror/icons/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
-          .css( {'transform': transform,'height': height, 'width': width, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
+          .css( {'transform': transform,'height': height, 'width': width, 'background-image': 'url(src/assets/wheel_img/buff_allgreen.png)'} )
+          // .css( {'transform': transform,'height': height, 'width': width} )
 
       }
       $wheel.css('margin-top','-'+height+'px');
@@ -112,7 +113,7 @@
 
             $( '<div>', {class: 'wheel__segment'} )
             .html( `<span> <img src="src/assets/wheel_horror/icons/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
-            .css( {'transform': transform,'height': height, 'width': width, 'background-image': 'url(src/assets/wheel_img/'+jsonObject[i].type+'.png)'} )
+            .css( {'transform': transform,'height': height, 'width': width, 'background-image': 'url(src/assets/wheel_img/buff_allgreen.png)'} )
             .click(function() {
 
               deletedEffects.push(jsonObject[i]);
