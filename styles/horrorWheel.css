@@ -46,7 +46,7 @@ body{
   font-family: Montserrat;
   pointer-events: none;
 	text-align: center;
-  font-size: 24;
+  font-size: 26;
   color: white;
 	position: absolute;
   top: 420px;
@@ -57,7 +57,7 @@ body{
 
 #descriptionName{
   font-family: Montserrat;
-  font-size: 32;
+  font-size: 34;
   font-weight: bold;
 }
 
@@ -124,7 +124,7 @@ div.wheel_button input {
 
 @font-face {
     font-family: Montserrat;
-    src: url(../src/fonts/Montserrat-Light.ttf);
+    src: url(../src/fonts/Sehnsucht.ttf);
 }
 
 @font-face {
