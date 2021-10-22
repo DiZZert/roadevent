@@ -62,7 +62,7 @@ body{
 }
 
 div.wheel_button input {
-    background:url(../src/knopkaKrutit1.png) no-repeat;
+    background:url(../src/knopkaHorror.png) no-repeat;
     cursor:pointer;
     width: 180px;
     height: 70px;
