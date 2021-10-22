@@ -22,23 +22,25 @@
   '{"type": "buff","name": "Страшный киновечер","pic": "icon019.png","description": "после выпадения данного пункта активируется приём заказов кина (как на сабдее, %кино). Жанр - ужасы. В конце стрима ролл и просмотр. Если пункт выпал к концу стрима, то перенос на следующий эфир"},'+
   '{"type": "buff","name": "ЗОЛОТАЯ КОЛЛЕКЦИЯ","pic": "icon020.png","description": "следующая игра для прохождения будет из элитного списка, из которого игру выбирут зрители. Прохождение не идёт в общий зачёт пройденных игр. Может выпасть только один раз за весь ивент"},'+
   '{"type": "buff","name": "Страшно, надо выпить (категория 4 и выше)","pic": "icon021.png","description": "стример выпивает за каждый испуг, закусывать можно (на один стрим)"},'+
-  '{"type": "buff","name": "Выключение света","pic": "0000.png","description": "стример гарантированно проходит все игры до конца ивента без света"},'+
-  '{"type": "buff","name": "Шо то, шо это","pic": "0000.png","description": "перед стримером встаёт выбор, получить Плюс игру, либо проходить следующую игру на максимальной из всех доступных категорий. Если он и так на ней, то выбора нет, плюс игра"},'+
+  '{"type": "buff","name": "Выключение света","pic": "icon022.png","description": "стример гарантированно проходит все игры до конца ивента без света"},'+
+  '{"type": "buff","name": "Шо то, шо это","pic": "icon023.png","description": "перед стримером встаёт выбор, получить Плюс игру, либо проходить следующую игру на максимальной из всех доступных категорий. Если он и так на ней, то выбора нет, плюс игра"},'+
   '{"type": "buff","name": "На пенёк сел, жопу потерял (категория 4 и выше)","pic": "icon004.png","description": "стримерский стул меняется на парашный табурет. Если стример упал с табурета, то Плюс игра (только один раз). Действует на текущую и следующую игры до падения, если оно будет"}]';
   ;
 
   var spinSounArray = [
-    "spinSound",
-    "atas",
-    "auf1",
-    "clubbedtodeath1",
-    "fatboy",
-    "napas",
-    "scooter",
-    "scooter2",
-    "takeitboy1",
-    "turbokiller1",
-    "turbokiller2"
+    "broken_radio",
+    "chain",
+    "howl",
+    "radio",
+    "song",
+    "song1",
+    "whispers"
+  ];
+
+  var posSFXArray = [
+    "thunder",
+    "thunder1",
+    "whosh"
   ];
 
   var horrorsCategoryArray = [
@@ -128,7 +130,7 @@
         $("#descriptionText").text('');
         $("#descriptionLegendary").text('');
 
-        // playSound("spinning/" + spinSounArray[Math.floor(getRandom(spinSounArray.length,0))]);
+        playSound("spin/" + spinSounArray[Math.floor(getRandom(spinSounArray.length,0))]);
 
         $wheelSpinClass.addClass('wheelAnimation');
 
@@ -163,7 +165,7 @@
               }, 2000);
 
             } else {
-              playSound("thunder");
+              playSound("effects/" + posSFXArray[Math.floor(getRandom(posSFXArray.length,0))]);
             }
 
           }, 9300);
