@@ -28,6 +28,17 @@
   ;
 
   var spinSounArray = [
+    "ch_shouting",
+    "cr_instr01",
+    "creepy_ghost_ch",
+    "girl_singing",
+    "lullaby",
+    "piano",
+    "tension01",
+    "tension02",
+    "tension03",
+    "tension04",
+    "tension05",
     "broken_radio",
     "chain",
     "howl",
@@ -40,6 +51,18 @@
   var posSFXArray = [
     "thunder",
     "thunder1",
+    "impact01",
+    "impact02",
+    "impact03",
+    "impact04",
+    "impact05",
+    "metal01",
+    "metal02",
+    "metal03",
+    "metal04",
+    "metal05",
+    "metal06",
+    "tension",
     "whosh"
   ];
 
