@@ -10,40 +10,17 @@ body{
   margin-right: 0;
 }
 
-.bc_image{
-	text-align: center;
-	position: relative;
-	z-index: 1;
-}
-
 .wheel_frame{
   pointer-events: none;
 	position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 605px;
+  top: 631px;
   z-index: 3;
 }
 
-.legendaryDesc{
-
-  font-family: MontserratMedium;
-  pointer-events: none;
-	text-align: center;
-  font-size: 48;
-  color: white;
-	position: absolute;
-  width: 30%;
-	z-index: 10;
-  top: 420px;
-  transform: translateY(-50%);
-  left: 50%;
-  transform: translateX(-50%);
-  text-shadow:0px 1px 0 rgb(0,0,0),0px -1px 0 rgb(0,0,0),1px 0px 0 rgb(0,0,0),-1px 0px 0 rgb(0,0,0),1px 1px 0 rgb(0,0,0),1px -1px 0 rgb(0,0,0),-1px 1px 0 rgb(0,0,0),-1px -1px 0 rgb(0,0,0);
-}
-
 .description{
-  font-family: Montserrat;
+  font-family: floydc;
   pointer-events: none;
 	text-align: center;
   font-size: 26;
@@ -56,7 +33,7 @@ body{
 }
 
 #descriptionName{
-  font-family: Montserrat;
+  font-family: floydc;
   font-size: 34;
   font-weight: bold;
 }
@@ -78,15 +55,13 @@ div.wheel_button input {
 .wheel {
   display: block;
 	position: fixed;
-  /* width: 600px; */
   perspective: 1000px;
   left: 50%;
-  top: 70%;
+  top: 72%;
   transform: translateY(-50%);
 	z-index: 2;
 }
 .wheel__inner {
-  /* width: 50px; */
   height: 600px;
   margin: 0 auto ;
   transform-style: preserve-3d;
@@ -95,7 +70,6 @@ div.wheel_button input {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 100%; */
   height: 40px;
   position: absolute;
   top: 50%;
@@ -106,28 +80,11 @@ div.wheel_button input {
   animation: 9s ease-in 1 reverse spinWheel;
 }
 
-.spin:after {
-  content:"";
-  animation: spin 0.4s linear 5;
-}
-@keyframes spin {
-  0% { content:"пусечная"; }
-  20% { content:"стремач"; }
-  40% { content:"вырубай"; }
-  60% { content:"ну нахуй"; }
-  80% { content:"РЕЗНЯ"; }
-}
-
 @-webkit-keyframes spinWheel {
   to {transform: rotateY(3600deg);}
 }
 
 @font-face {
-    font-family: Montserrat;
+    font-family: floydc;
     src: url(../src/fonts/floydc.ttf);
-}
-
-@font-face {
-    font-family: MontserratMedium;
-    src: url(../src/fonts/Montserrat-Medium.ttf);
 }

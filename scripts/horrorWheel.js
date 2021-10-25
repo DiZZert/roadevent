@@ -38,7 +38,7 @@
     "tension02",
     "tension03",
     "tension04",
-    "tension05",
+    // "tension05",
     "broken_radio",
     "chain",
     "howl",
@@ -64,14 +64,6 @@
     "metal06",
     "tension",
     "whosh"
-  ];
-
-  var horrorsCategoryArray = [
-    "пусечная",
-    "стремач",
-    "вырубай",
-    "ну нахуй",
-    "РЕЗНЯ"
   ];
 
     var jsonObject = jQuery.parseJSON(effectsArray);
@@ -106,7 +98,6 @@
           $( '<div>', {class: 'wheel__segment'} )
           .html( `<span> <img src="src/assets/wheel_horror/icons/` + jsonObject[i].pic + `" width="60" height="60"> </span>` ).appendTo( $wheel )
           .css( {'transform': transform,'height': height, 'width': width, 'background-image': 'url(src/assets/wheel_img/buff_allgreen.png)'} )
-          // .css( {'transform': transform,'height': height, 'width': width} )
 
       }
       $wheel.css('margin-top','-'+height+'px');
@@ -161,7 +152,6 @@
           var rotateDeg = getRandom(360,angle/2);
 
           var currentPosition = (360 - (rotateDeg-(angle/2)))/angle;
-          // var currentPosition = 9;
           var roundedPosition = Math.floor(currentPosition);
 
           console.log("rotated: " + rotateDeg + " current: " + currentPosition + " roundedPosition: " + roundedPosition);
@@ -173,24 +163,7 @@
             $("#descriptionName").text(jsonObject[roundedPosition].name);
             $("#descriptionText").text(jsonObject[roundedPosition].description);
 
-            if(jsonObject[roundedPosition].type == "debuff") {
-              // playSound("sorry");
-            } else if (jsonObject[roundedPosition].type == "legendary") {
-              // playSound("legendary");
-
-              let legendaryPosition = Math.floor(getRandom(horrorsCategoryArray.length, 0))
-              $("#descriptionName").text('');
-
-              $("#descriptionLegendary").addClass('spin');
-
-              setTimeout(function(){
-                $("#descriptionLegendary").removeClass('spin');
-                $("#descriptionLegendary").text(horrorsCategoryArray[legendaryPosition]);
-              }, 2000);
-
-            } else {
-              playSound("effects/" + posSFXArray[Math.floor(getRandom(posSFXArray.length,0))]);
-            }
+            playSound("effects/" + posSFXArray[Math.floor(getRandom(posSFXArray.length,0))]);
 
           }, 9300);
        });
